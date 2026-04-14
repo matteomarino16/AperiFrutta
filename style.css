@@ -161,7 +161,6 @@ ul {
 }
 
 .header.scrolled .logo img {
-    filter: none;
 }
 
 .header-inner {
@@ -170,14 +169,14 @@ ul {
     justify-content: space-between;
 }
 
-.logo img {
-    height: 50px;
-    filter: brightness(0) invert(1);
-    transition: var(--transition);
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.header.scrolled .logo img {
-    filter: none;
+.logo img {
+    height: 50px;
+    transition: var(--transition);
 }
 
 .nav-list {
@@ -475,9 +474,9 @@ ul {
 }
 
 .servizio-card {
-    padding: 40px 30px;
+    padding: 30px 25px;
     background: var(--color-light-gray);
-    border-radius: 24px;
+    border-radius: 20px;
     text-align: center;
     transition: var(--transition);
     position: relative;
@@ -905,7 +904,6 @@ ul {
 
 .footer-logo {
     height: 45px;
-    filter: brightness(0) invert(1);
 }
 
 .footer-links h4,
