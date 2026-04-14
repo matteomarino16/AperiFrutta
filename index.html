@@ -20,7 +20,7 @@
             </a>
             <nav class="nav" id="nav">
                 <ul class="nav-list">
-                    <li><a href="#hero" class="nav-link active">Hero</a></li>
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
                     <li><a href="#chi-siamo" class="nav-link">Chi siamo</a></li>
                     <li><a href="#servizi" class="nav-link">Servizi</a></li>
                     <li><a href="#galleria" class="nav-link">Galleria</a></li>
@@ -148,53 +148,28 @@
                 <div class="section-header">
                     <span class="section-tag">Galleria</span>
                     <h2 class="section-title">I nostri momenti più belli</h2>
-                    <p class="section-desc">Scopri بعض delle nostre creazioni e lasciati ispirare per il tuo prossimo evento.</p>
                 </div>
                 <div class="galleria-grid">
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80" alt="Cocktail colorati">
+                    <div class="galleria-item" onclick="openLightbox(this)">
+                        <img src="galleria/09-08-2025🥂#rinfresco%20%23wedding%20%23puglia.jpg" alt="Rinfresco wedding Puglia">
                         <div class="galleria-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=600&q=80" alt="Frutta tropicale">
+                    <div class="galleria-item" onclick="openLightbox(this)">
+                        <img src="galleria/Donato&rRosa%20🤵‍♂️👰22-08-2025%20🥂❤️Siamo%20felici%20di%20aver%20contribuito%20con%20un%20rinfresco%20in%20un%20giorn.jpg" alt="Donato e Rosa wedding">
                         <div class="galleria-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600&q=80" alt="Allestimento evento">
+                    <div class="galleria-item" onclick="openLightbox(this)">
+                        <img src="galleria/Donato&rRosa%20🤵‍♂️👰22-08-2025%20🥂❤️Siamo%20felici%20di%20aver%20contribuito%20con%20un%20rinfresco%20in%20un%20giorn-2.jpg" alt="Donato e Rosa wedding 2">
                         <div class="galleria-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80" alt="Buffet frutta">
-                        <div class="galleria-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" alt="Cocktail signature">
-                        <div class="galleria-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Tavolo allestito">
-                        <div class="galleria-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Dettaglio buffet">
-                        <div class="galleria-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="galleria-item">
-                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Evento completo">
+                    <div class="galleria-item" onclick="openLightbox(this)">
+                        <img src="galleria/work%20in%20progress.jpg" alt="Work in progress">
                         <div class="galleria-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
@@ -202,6 +177,13 @@
                 </div>
             </div>
         </section>
+
+        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+            <button class="lightbox-prev" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</button>
+            <button class="lightbox-next" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</button>
+        </div>
 
         <section class="contatti" id="contatti">
             <div class="container">
@@ -317,38 +299,8 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="logo.png" alt="Aperifrutta Catering" class="footer-logo">
-                    <p>L'aperitivo che non hai mai visto prima. Trasformiamo ogni momento in un'esperienza unica.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Link rapidi</h4>
-                    <ul>
-                        <li><a href="#hero">Hero</a></li>
-                        <li><a href="#chi-siamo">Chi siamo</a></li>
-                        <li><a href="#servizi">Servizi</a></li>
-                        <li><a href="#galleria">Galleria</a></li>
-                        <li><a href="#contatti">Contatti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contatti">
-                    <h4>Contatti</h4>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> <a href="tel:+393209271941">320 927 1941</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:aperifrutta20@gmail.com">aperifrutta20@gmail.com</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Viale della libertà 154</li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Seguici</h4>
-                    <div class="social-links">
-                        <a href="https://instagram.com/aperifrutta" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/aperifrutta" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://pinterest.com/aperifrutta" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-            </div>
+          
+             
             <div class="footer-bottom">
                 <p>&copy; 2026 Aperifrutta Catering. Tutti i diritti riservati.</p>
                 <p>Web by Matteo Marino</p>

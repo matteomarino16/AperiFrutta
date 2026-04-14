@@ -2,16 +2,17 @@
     --color-primary: #2d5a27;
     --color-secondary: #e67e22;
     --color-accent: #f39c12;
-    --color-light: #fef9e7;
+    --color-light: #1a1a1a;
     --color-white: #ffffff;
-    --color-black: #1a1a1a;
-    --color-gray: #6c757d;
-    --color-light-gray: #f8f9fa;
+    --color-black: #000000;
+    --color-gray: #b0b0b0;
+    --color-light-gray: #2a2a2a;
+    --color-bg-dark: #0a0a0a;
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: all 0.3s ease;
-    --shadow: 0 10px 40px rgba(0,0,0,0.1);
-    --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+    --shadow: 0 10px 40px rgba(0,0,0,0.5);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 * {
@@ -28,9 +29,9 @@ body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.7;
-    color: var(--color-black);
+    color: var(--color-white);
     overflow-x: hidden;
-    background: var(--color-white);
+    background: var(--color-black);
 }
 
 img {
@@ -88,13 +89,13 @@ ul {
 
 .btn-secondary {
     background: transparent;
-    color: var(--color-white);
-    border-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-black);
 }
 
 .btn-secondary:hover {
-    background: var(--color-white);
-    color: var(--color-primary);
+    background: var(--color-black);
+    color: var(--color-white);
     transform: translateY(-2px);
 }
 
@@ -125,7 +126,7 @@ ul {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: 16px;
     line-height: 1.3;
 }
@@ -145,17 +146,18 @@ ul {
     z-index: 1000;
     padding: 20px 0;
     transition: var(--transition);
-    background: transparent;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 .header.scrolled {
-    background: var(--color-white);
+    background: rgba(0, 0, 0, 0.98);
     box-shadow: var(--shadow);
     padding: 15px 0;
 }
 
 .header.scrolled .nav-link {
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 .header.scrolled .logo img {
@@ -345,7 +347,7 @@ ul {
 
 .chi-siamo {
     padding: 120px 0;
-    background: var(--color-light);
+    background: var(--color-black);
 }
 
 .chi-siamo-grid {
@@ -377,7 +379,7 @@ ul {
 }
 
 .chi-siamo-text strong {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .chi-siamo-features {
@@ -390,15 +392,17 @@ ul {
 .feature {
     text-align: center;
     padding: 30px 20px;
-    background: var(--color-white);
+    background: var(--color-light-gray);
     border-radius: 20px;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .feature:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--color-secondary);
 }
 
 .feature i {
@@ -410,7 +414,7 @@ ul {
 .feature h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: 8px;
 }
 
@@ -461,7 +465,7 @@ ul {
 
 .servizi {
     padding: 120px 0;
-    background: var(--color-white);
+    background: var(--color-black);
 }
 
 .servizi-grid {
@@ -472,12 +476,13 @@ ul {
 
 .servizio-card {
     padding: 40px 30px;
-    background: var(--color-light);
+    background: var(--color-light-gray);
     border-radius: 24px;
     text-align: center;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .servizio-card::before {
@@ -500,6 +505,7 @@ ul {
 .servizio-card:hover {
     transform: translateY(-15px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--color-secondary);
 }
 
 .servizio-icon {
@@ -521,7 +527,7 @@ ul {
 .servizio-card h3 {
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: 15px;
 }
 
@@ -550,7 +556,7 @@ ul {
 
 .galleria {
     padding: 120px 0;
-    background: var(--color-light);
+    background: var(--color-black);
 }
 
 .galleria-grid {
@@ -609,9 +615,72 @@ ul {
     transform: scale(1);
 }
 
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--color-white);
+    font-size: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--color-secondary);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
 .contatti {
     padding: 120px 0;
-    background: var(--color-white);
+    background: var(--color-black);
 }
 
 .contatti-layout {
@@ -641,18 +710,19 @@ ul {
 }
 
 .contatti-box {
-    background: var(--color-light);
+    background: var(--color-light-gray);
     border-radius: 24px;
     padding: 40px;
     flex: 1;
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .contatti-box h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: 30px;
 }
 
@@ -679,7 +749,7 @@ ul {
 .contatto-row strong {
     display: block;
     font-size: 0.85rem;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -715,7 +785,7 @@ ul {
 
 .preventivo {
     padding: 120px 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    background: var(--color-black);
     position: relative;
 }
 
@@ -732,11 +802,12 @@ ul {
 .preventivo-form {
     max-width: 800px;
     margin: 0 auto;
-    background: var(--color-white);
+    background: var(--color-light-gray);
     padding: 60px;
     border-radius: 30px;
     box-shadow: var(--shadow-lg);
     animation: fadeInUp 0.8s ease;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .form-row {
@@ -758,7 +829,7 @@ ul {
 .form-group label {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: 8px;
 }
 
@@ -768,10 +839,11 @@ ul {
     padding: 16px 20px;
     font-family: var(--font-body);
     font-size: 1rem;
-    border: 2px solid #e9ecef;
+    border: 2px solid rgba(255,255,255,0.2);
     border-radius: 12px;
     transition: var(--transition);
-    background: var(--color-light-gray);
+    background: var(--color-black);
+    color: var(--color-white);
 }
 
 .form-group input:focus,
@@ -779,13 +851,13 @@ ul {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-secondary);
-    background: var(--color-white);
-    box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.1);
+    background: var(--color-black);
+    box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.2);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #adb5bd;
+    color: var(--color-gray);
 }
 
 .form-group select {
@@ -938,9 +1010,9 @@ ul {
         width: 80%;
         max-width: 350px;
         height: 100vh;
-        background: var(--color-white);
+        background: var(--color-black);
         padding: 100px 40px 40px;
-        box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.5);
         transition: var(--transition);
     }
 
@@ -955,7 +1027,7 @@ ul {
     }
 
     .nav-link {
-        color: var(--color-black) !important;
+        color: var(--color-white) !important;
         font-size: 1.1rem;
     }
 
