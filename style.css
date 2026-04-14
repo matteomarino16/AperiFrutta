@@ -379,10 +379,11 @@ ul {
 }
 
 .chi-siamo-text {
-    font-size: 1.1rem;
-    color: var(--color-gray);
-    margin-bottom: 24px;
-}
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
 .chi-siamo-text strong {
     color: var(--color-secondary);
@@ -1184,6 +1185,7 @@ ul {
 
     .servizio-card {
         padding: 20px 15px;
+        min-height: 350px;
     }
 
     .servizio-icon {
@@ -1202,10 +1204,10 @@ ul {
     }
 
     .servizio-card p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         margin-bottom: 15px;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
@@ -1337,7 +1339,7 @@ ul {
     .galleria,
     .contatti,
     .preventivo {
-        padding: 80px 0;
+        padding: 100px 0 60px;
     }
 }
 
@@ -1355,18 +1357,25 @@ ul {
         margin-bottom: 20px;
     }
 
+    .servizi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
     .chi-siamo-features {
-        flex-direction: column;
-        overflow-x: visible;
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 15px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -15px;
+        padding: 0 15px 15px;
     }
 
     .feature {
-        flex: none;
-        width: 100%;
-    }
-
-    .servizi-grid {
-        grid-template-columns: 1fr;
+        flex: 0 0 180px;
+        scroll-snap-align: center;
     }
 
     .galleria-grid {
