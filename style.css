@@ -859,13 +859,15 @@ ul {
 }
 
 .preventivo .section-title,
-.preventivo .section-tag,
 .preventivo .section-desc {
     color: var(--color-white);
 }
 
-.preventivo .section-tag {
-    background: rgba(255,255,255,0.2);
+.preventivo-logo {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto 50px;
+    filter: none;
 }
 
 .preventivo-form {
