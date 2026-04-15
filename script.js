@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
+            if (!document.getElementById('privacy').checked) {
+                alert('È necessario accettare la Cookie Policy per inviare la richiesta.');
+                return;
+            }
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
                 alert('Per favore inserisci un indirizzo email valido.');
@@ -152,6 +157,21 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Cookie Banner Logic
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+
+    if (!localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 2000);
+    }
+
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieBanner.classList.remove('show');
+    });
 
     document.querySelectorAll('.galleria-item').forEach(item => {
         item.addEventListener('click', function() {
