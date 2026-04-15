@@ -114,19 +114,42 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio in corso...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Richiesta inviata!';
-                submitBtn.style.background = '#27ae60';
-                submitBtn.style.borderColor = '#27ae60';
-                
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.style.borderColor = '';
-                    submitBtn.disabled = false;
+            // Invio tramite Formspree (sostituire YOUR_FORMSPREE_ID con il proprio ID Formspree)
+            fetch('https://formspree.io/f/mqakvjje', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Richiesta inviata!';
+                    submitBtn.style.background = '#27ae60';
+                    submitBtn.style.borderColor = '#27ae60';
                     preventivoForm.reset();
-                }, 3000);
-            }, 1500);
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.borderColor = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Si è verificato un errore. Per favore riprova.');
+                        }
+                    });
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            }).catch(error => {
+                alert('Si è verificato un errore di connessione. Per favore riprova.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
 
