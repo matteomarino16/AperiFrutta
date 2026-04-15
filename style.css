@@ -379,14 +379,16 @@ ul {
 }
 
 .chi-siamo-text {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        text-align: center;
-    }
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
 
 .chi-siamo-text strong {
     color: var(--color-secondary);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(230, 126, 34, 0.2);
 }
 
 .chi-siamo-features {
@@ -433,7 +435,7 @@ ul {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 200px);
+    grid-auto-rows: auto;
     gap: 20px;
     animation: fadeInRight 1s ease;
 }
@@ -453,12 +455,18 @@ ul {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .image-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
     transition: var(--transition);
 }
 
@@ -594,28 +602,72 @@ ul {
 
 .evento-item {
     text-align: center;
-    padding: 40px 30px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     transition: var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.evento-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-secondary), var(--color-primary));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.evento-item:hover::before {
+    opacity: 1;
+}
+
+.evento-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    opacity: 0;
+    transition: var(--transition);
+    z-index: -1;
 }
 
 .evento-item:hover {
     transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--color-secondary);
+}
+
+.evento-item:hover::after {
+    opacity: 0.1;
 }
 
 .evento-icon {
-    font-size: 2.5rem;
-    color: var(--color-secondary);
-    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-white);
 }
 
 .evento-item h3 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--color-white);
     margin-bottom: 15px;
 }
@@ -623,7 +675,8 @@ ul {
 .evento-item p {
     font-size: 0.95rem;
     color: var(--color-gray);
-    line-height: 1.6;
+    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
 .galleria {
@@ -851,6 +904,80 @@ ul {
 .contatto-row p {
     font-size: 1rem;
     color: var(--color-white);
+}
+
+/* Sezione Recensioni Google */
+.recensioni-google {
+    padding: 40px 0;
+    background: var(--color-black);
+}
+
+.recensioni-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 50px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow);
+}
+
+.aperifrutta-logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.rating-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.punteggio {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.stelle {
+    display: flex;
+    gap: 5px;
+    color: #fbbc05; /* Colore giallo Google */
+    font-size: 1.2rem;
+}
+
+.label-recensioni {
+    font-size: 1rem;
+    color: var(--color-gray);
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .recensioni-box {
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px 30px;
+        border-radius: 30px;
+    }
+    
+    .rating-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .punteggio {
+        font-size: 1.8rem;
+    }
+    
+    .aperifrutta-logo {
+        width: 100px;
+    }
 }
 
 /* Floating Buttons */
@@ -1215,6 +1342,13 @@ ul {
         gap: 40px;
     }
 
+    .chi-siamo-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
     .chi-siamo-features {
         display: flex;
         overflow-x: auto;
@@ -1286,20 +1420,29 @@ ul {
     }
 
     .evento-item {
-        padding: 25px 15px;
+        padding: 20px 15px;
+        min-height: 250px;
     }
 
     .evento-icon {
-        font-size: 2rem;
+        width: 60px;
+        height: 60px;
         margin-bottom: 15px;
+        font-size: 1.5rem;
     }
 
     .evento-item h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
     }
 
     .evento-item p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .galleria-grid {
