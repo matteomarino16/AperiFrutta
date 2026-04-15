@@ -247,6 +247,7 @@ ul {
     padding: 20px 0;
     transition: var(--transition);
     background: transparent;
+    -webkit-backdrop-filter: blur(0px);
     backdrop-filter: blur(0px);
 }
 
@@ -626,6 +627,8 @@ ul {
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-secondary), var(--color-primary));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     opacity: 0;
     transition: var(--transition);
@@ -1415,6 +1418,7 @@ ul {
         padding: 100px 40px 40px;
         box-shadow: -10px 0 40px rgba(0,0,0,0.5);
         transition: var(--transition);
+        z-index: 2000;
     }
 
     .nav.active {
@@ -1534,8 +1538,9 @@ ul {
         margin-bottom: 12px;
         display: -webkit-box;
         -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
     }
 
     .servizio-link {
@@ -1573,8 +1578,9 @@ ul {
         margin-bottom: 12px;
         display: -webkit-box;
         -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
     }
 
     .galleria-grid {
@@ -1767,6 +1773,13 @@ body.has-cookie-banner .floating-btn {
     .servizio-card p {
         font-size: 0.7rem;
         -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .evento-item p {
+        font-size: 0.7rem;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
     }
 
     .eventi-grid {
