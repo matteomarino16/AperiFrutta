@@ -580,6 +580,52 @@ ul {
     gap: 12px;
 }
 
+/* Sezione Eventi */
+.eventi {
+    padding: 120px 0;
+    background: var(--color-black);
+}
+
+.eventi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.evento-item {
+    text-align: center;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.evento-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-secondary);
+}
+
+.evento-icon {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.evento-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: 15px;
+}
+
+.evento-item p {
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
 .galleria {
     padding: 120px 0;
     background: var(--color-black);
@@ -588,18 +634,32 @@ ul {
 .galleria-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-auto-rows: 200px;
+    gap: 15px;
+    grid-auto-flow: dense;
 }
 
 .galleria-item {
     position: relative;
-    aspect-ratio: 1;
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
 }
 
-.galleria-item:nth-child(1) {
+/* Effetto Mosaico Intrecciato */
+.galleria-item:nth-child(4n+1) {
+    grid-row: span 2;
+}
+
+.galleria-item:nth-child(3n+2) {
+    grid-column: span 2;
+}
+
+.galleria-item:nth-child(5n+3) {
+    grid-row: span 3;
+}
+
+.galleria-item:nth-child(7n) {
     grid-column: span 2;
     grid-row: span 2;
 }
@@ -1220,14 +1280,55 @@ ul {
         color: white;
     }
 
+    .eventi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .evento-item {
+        padding: 25px 15px;
+    }
+
+    .evento-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .evento-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .evento-item p {
+        font-size: 0.85rem;
+    }
+
     .galleria-grid {
         grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
         gap: 10px;
+        grid-auto-flow: dense;
     }
 
     .galleria-item:nth-child(1) {
-        grid-column: span 2;
+        grid-column: span 1;
         grid-row: span 1;
+    }
+
+    /* Reset mosaico mobile */
+    .galleria-item:nth-child(4n+1),
+    .galleria-item:nth-child(3n+2),
+    .galleria-item:nth-child(5n+3),
+    .galleria-item:nth-child(7n) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .galleria-item:nth-child(odd) {
+        grid-row: span 2;
+    }
+
+    .galleria-item:nth-child(3n) {
+        grid-column: span 2;
     }
 
     .contatti-layout {
