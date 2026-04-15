@@ -169,9 +169,27 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .cookie-banner {
+        padding: 25px 0;
+    }
+    
     .cookie-content {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
+    }
+
+    .cookie-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    .cookie-content .btn-small {
+        width: 100%;
+        max-width: 200px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 }
 
@@ -339,7 +357,7 @@ ul {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80') center/cover no-repeat;
+    background: url('hero.png') center/cover no-repeat;
     animation: heroZoom 20s ease infinite alternate;
 }
 
@@ -1659,14 +1677,19 @@ ul {
     }
 
     .btn-whatsapp {
-        right: 20px;
-    }
+    right: 20px;
+}
 
-    .btn-phone {
-        left: 20px;
-    }
+.btn-phone {
+    left: 20px;
+}
 
-    .section-header {
+/* Evita sovrapposizione banner cookie con pulsanti flottanti */
+body.has-cookie-banner .floating-btn {
+    bottom: 120px;
+}
+
+.section-header {
         margin-bottom: 40px;
     }
 

@@ -165,12 +165,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!localStorage.getItem('cookiesAccepted')) {
         setTimeout(() => {
             cookieBanner.classList.add('show');
+            document.body.classList.add('has-cookie-banner');
         }, 2000);
     }
 
     acceptBtn.addEventListener('click', function() {
         localStorage.setItem('cookiesAccepted', 'true');
         cookieBanner.classList.remove('show');
+        document.body.classList.remove('has-cookie-banner');
     });
 
     document.querySelectorAll('.galleria-item').forEach(item => {
