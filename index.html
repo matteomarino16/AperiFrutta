@@ -3,20 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aperifrutta - Catering e servizi esclusivi per eventi unici">
-    <meta name="keywords" content="catering,open bar, candy bar, gelato artigianale, aperitivo, frutta fresca, cocktail naturali, eventi, party, aziendale">
-    <title>Aperifrutta</title>
+    <meta name="description" content="Aperifrutta - Servizi esclusivi di catering per eventi: Open Bar, Candy Bar, Frutta Fresca e allestimenti scenografici per matrimoni e feste private.">
+    <meta name="keywords" content="catering eventi, open bar matrimoni, candy bar, rinfresco cerimonie, frutta fresca eventi, gelato artigianale catering, popcorn e zucchero filato, Aperifrutta">
+    <meta name="author" content="Aperifrutta">
+    <link rel="canonical" href="https://www.aperifrutta.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aperifrutta.com/">
+    <meta property="og:title" content="Aperifrutta - Catering d'Eccellenza per i tuoi Eventi">
+    <meta property="og:description" content="Trasforma il tuo evento con i servizi esclusivi di Aperifrutta. Catering professionale, open bar e allestimenti unici.">
+    <meta property="og:image" content="https://www.aperifrutta.com/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.aperifrutta.com/">
+    <meta property="twitter:title" content="Aperifrutta - Catering d'Eccellenza per i tuoi Eventi">
+    <meta property="twitter:description" content="Trasforma il tuo evento con i servizi esclusivi di Aperifrutta. Catering professionale, open bar e allestimenti unici.">
+    <meta property="twitter:image" content="https://www.aperifrutta.com/logo.png">
+
+    <title>Aperifrutta | Catering d'Eccellenza per Eventi e Cerimonie</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Preload Critical Images -->
+    <link rel="preload" as="image" href="logo.png">
+    <link rel="preload" as="image" href="hero.png">
 </head>
 <body>
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="#" class="logo">
-                <img src="logo.png" alt="Aperifrutta Catering">
+                <img src="logo.png" alt="Aperifrutta Catering" width="180" height="60">
             </a>
             <nav class="nav" id="nav">
                 <ul class="nav-list">
@@ -41,7 +64,7 @@
             <div class="hero-bg"></div>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
-                <img src="logo.png" alt="Aperifrutta" class="hero-logo">
+                <img src="logo.png" alt="Aperifrutta" class="hero-logo" width="250" height="150">
               
                 <p class="hero-subtitle">Trasforma il tuo evento in un’esperienza indimenticabile</p>
               
@@ -85,13 +108,13 @@
                     <div class="chi-siamo-images">
                         <div class="image-grid">
                             <div class="image-item image-1">
-                                <img src="logo.png" alt="Logo-Aperifrutta">
+                                <img src="logo.png" alt="Logo-Aperifrutta" width="200" height="120" loading="lazy">
                             </div>
                             <div class="image-item image-2">
-                                <img src="galleria/Il nostro nuovo carretto!Il catering per ogni tipo di evento-Matrimoni 👰‍♂️🤵Inaugurazioni🍀Par-2.jpg" alt="Frutta fresca">
+                                <img src="galleria/Il nostro nuovo carretto!Il catering per ogni tipo di evento-Matrimoni 👰‍♂️🤵Inaugurazioni🍀Par-2.jpg" alt="Frutta fresca" width="300" height="400" loading="lazy">
                             </div>
                             <div class="image-item image-3">
-                                <img src="galleria/WhatsApp Image 2026-04-15 at 08.19.06 (1).jpeg" alt="Evento allestito">
+                                <img src="galleria/WhatsApp Image 2026-04-15 at 08.19.06 (1).jpeg" alt="Evento allestito" width="300" height="400" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -109,18 +132,18 @@
                 <div class="servizi-grid">
                     <div class="servizio-card">
                         <div class="servizio-icon">
-                            <i class="fas fa-apple-alt"></i>
-                        </div>
-                        <h3>Frutta Fresca</h3>
-                        <p>Il cuore di Aperifrutta: composizioni scenografiche e buffet di frutta di stagione selezionata, tagliata e presentata con arte per stupire i tuoi ospiti.</p>
-                        <a href="#preventivo" class="servizio-link">Richiedi info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="servizio-card">
-                        <div class="servizio-icon">
                             <i class="fas fa-church"></i>
                         </div>
                         <h3>Rinfresco per cerimonie</h3>
                         <p>Matrimoni, comunioni e battesimi: rendiamo unici i tuoi momenti sacri con buffet eleganti e allestimenti scenografici curati in ogni dettaglio.</p>
+                        <a href="#preventivo" class="servizio-link">Richiedi info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="servizio-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Frutta Fresca</h3>
+                        <p>Il cuore di Aperifrutta: composizioni scenografiche e buffet di frutta di stagione selezionata, tagliata e presentata con arte per stupire i tuoi ospiti.</p>
                         <a href="#preventivo" class="servizio-link">Richiedi info <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="servizio-card">
@@ -161,6 +184,14 @@
                         </div>
                         <h3>Candy bar</h3>
                         <p>Un'esplosione di colori e dolcezza: allestimenti personalizzati con caramelle, dolciumi e decorazioni a tema per rendere magica la tua festa.</p>
+                        <a href="#preventivo" class="servizio-link">Richiedi info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="servizio-card">
+                        <div class="servizio-icon">
+                            <i class="fas fa-popcorn"></i>
+                        </div>
+                        <h3>Popcorn & Zucchero filato</h3>
+                        <p>L'angolo della gioia: popcorn croccante e nuvole di zucchero filato preparati al momento per un'atmosfera di festa indimenticabile.</p>
                         <a href="#preventivo" class="servizio-link">Richiedi info <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -217,55 +248,55 @@
                 </div>
                 <div class="galleria-grid">
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/Donato&rRosa%20🤵‍♂️👰22-08-2025%20🥂❤️Siamo%20felici%20di%20aver%20contribuito%20con%20un%20rinfresco%20in%20un%20giorn.jpg" alt="Donato e Rosa Wedding">
+                        <img src="galleria/Donato&rRosa%20🤵‍♂️👰22-08-2025%20🥂❤️Siamo%20felici%20di%20aver%20contribuito%20con%20un%20rinfresco%20in%20un%20giorn.jpg" alt="Donato e Rosa Wedding" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/Donato&rRosa%20🤵‍♂️👰22-08-2025%20🥂❤️Siamo%20felici%20di%20aver%20contribuito%20con%20un%20rinfresco%20in%20un%20giorn-2.jpg" alt="Donato e Rosa Wedding Dettaglio">
+                        <img src="galleria/Donato&rRosa%20🤵‍♂️👰22-08-2025%20🥂❤️Siamo%20felici%20di%20aver%20contribuito%20con%20un%20rinfresco%20in%20un%20giorn-2.jpg" alt="Donato e Rosa Wedding Dettaglio" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/Il%20nostro%20nuovo%20carretto!Il%20catering%20per%20ogni%20tipo%20di%20evento-Matrimoni%20👰‍♂️🤵Inaugurazioni🍀Par.jpg" alt="Il nostro nuovo carretto">
+                        <img src="galleria/Il%20nostro%20nuovo%20carretto!Il%20catering%20per%20ogni%20tipo%20di%20evento-Matrimoni%20👰‍♂️🤵Inaugurazioni🍀Par.jpg" alt="Il nostro nuovo carretto" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/Il%20nostro%20nuovo%20carretto!Il%20catering%20per%20ogni%20tipo%20di%20evento-Matrimoni%20👰‍♂️🤵Inaugurazioni🍀Par-2.jpg" alt="Il nostro nuovo carretto Dettaglio">
+                        <img src="galleria/Il%20nostro%20nuovo%20carretto!Il%20catering%20per%20ogni%20tipo%20di%20evento-Matrimoni%20👰‍♂️🤵Inaugurazioni🍀Par-2.jpg" alt="Il nostro nuovo carretto Dettaglio" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.06%20(1).jpeg" alt="Evento Aperifrutta 1">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.06%20(1).jpeg" alt="Evento Aperifrutta 1" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.06%20(2).jpeg" alt="Evento Aperifrutta 2">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.06%20(2).jpeg" alt="Evento Aperifrutta 2" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.06.jpeg" alt="Evento Aperifrutta 3">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.06.jpeg" alt="Evento Aperifrutta 3" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.07.jpeg" alt="Evento Aperifrutta 4">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.19.07.jpeg" alt="Evento Aperifrutta 4" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.20.27.jpeg" alt="Evento Aperifrutta 5">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.20.27.jpeg" alt="Evento Aperifrutta 5" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.22.03.jpeg" alt="Evento Aperifrutta 6">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.22.03.jpeg" alt="Evento Aperifrutta 6" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.22.59.jpeg" alt="Evento Aperifrutta 7">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.22.59.jpeg" alt="Evento Aperifrutta 7" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.24.34.jpeg" alt="Evento Aperifrutta 8">
+                        <img src="galleria/WhatsApp%20Image%202026-04-15%20at%2008.24.34.jpeg" alt="Evento Aperifrutta 8" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="galleria-item" onclick="openLightbox(this)">
-                        <img src="galleria/work%20in%20progress.jpg" alt="Work in progress">
+                        <img src="galleria/work%20in%20progress.jpg" alt="Work in progress" width="400" height="300" loading="lazy">
                         <div class="galleria-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                 </div>
@@ -307,11 +338,11 @@
                                         <p>320 927 1941</p>
                                     </div>
                                 </a>
-                                <a href="mailto:aperifrutta20@gmail.com" class="contatto-row">
+                                <a href="mailto:info@aperifrutta.com" class="contatto-row">
                                     <i class="fas fa-envelope"></i>
                                     <div>
                                         <strong>Email</strong>
-                                        <p>aperifrutta20@gmail.com</p>
+                                        <p>info@aperifrutta.com</p>
                                     </div>
                                 </a>
                                 <div class="contatto-social">

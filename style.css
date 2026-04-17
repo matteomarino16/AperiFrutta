@@ -263,7 +263,9 @@ ul {
 }
 
 .header:not(.scrolled) .logo img {
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); */
+    /* Commentato per mantenere i colori originali del logo se preferito, 
+       o puoi decommentare se vuoi il logo bianco sulla hero scura */
 }
 
 .header-inner {
@@ -278,8 +280,15 @@ ul {
 }
 
 .logo img {
-    height: 50px;
+    height: auto;
+    width: 150px;
+    max-width: 100%;
     transition: var(--transition);
+    object-fit: contain;
+}
+
+.header.scrolled .logo img {
+    width: 120px;
 }
 
 .nav-list {
@@ -1439,6 +1448,14 @@ ul {
     .nav-toggle {
         display: flex;
         z-index: 1001;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    .header.scrolled .logo img {
+        width: 100px;
     }
 
     .nav-toggle.active span:nth-child(1) {
