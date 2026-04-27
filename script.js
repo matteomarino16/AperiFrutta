@@ -116,45 +116,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio in corso...';
-            submitBtn.disabled = true;
+            
+            // Costruzione del corpo della mail per mailto
+            const subject = encodeURIComponent(`Richiesta Preventivo da ${data.nome}`);
+            const body = encodeURIComponent(
+                `Nuova richiesta di preventivo da Aperifrutta\n\n` +
+                `Dati Cliente:\n` +
+                `- Nome: ${data.nome}\n` +
+                `- Email: ${data.email}\n` +
+                `- Telefono: ${data.telefono}\n\n` +
+                `Dettagli Evento:\n` +
+                `- Tipo Evento: ${data['tipo-evento']}\n` +
+                `- Numero Persone: ${data['numero-persone']}\n` +
+                `- Data: ${data.data || 'Non specificata'}\n\n` +
+                `Messaggio:\n${data.messaggio}`
+            );
 
-            // Invio tramite Formspree (sostituire YOUR_FORMSPREE_ID con il proprio ID Formspree)
-            fetch('https://formspree.io/f/mqakvjje', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Richiesta inviata!';
-                    submitBtn.style.background = '#27ae60';
-                    submitBtn.style.borderColor = '#27ae60';
-                    preventivoForm.reset();
-                    
-                    setTimeout(() => {
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.style.background = '';
-                        submitBtn.style.borderColor = '';
-                        submitBtn.disabled = false;
-                    }, 3000);
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert('Si è verificato un errore. Per favore riprova.');
-                        }
-                    });
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }
-            }).catch(error => {
-                alert('Si è verificato un errore di connessione. Per favore riprova.');
+            const mailtoLink = `mailto:info@aperifrutta.com?subject=${subject}&body=${body}`;
+            
+            // Apertura del client email
+            window.location.href = mailtoLink;
+
+            // Feedback visivo
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Apertura email...';
+            submitBtn.style.background = '#27ae60';
+            submitBtn.style.borderColor = '#27ae60';
+            
+            setTimeout(() => {
                 submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
+                submitBtn.style.background = '';
+                submitBtn.style.borderColor = '';
+                preventivoForm.reset();
+            }, 3000);
         });
     }
 
