@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `Messaggio:\n${data.messaggio}`
             );
 
-            const mailtoLink = `mailto:info@aperifrutta.com?subject=${subject}&body=${body}`;
+            const mailtoLink = `mailto:Aperifrutta20@gmail.com?subject=${subject}&body=${body}`;
             
             // Apertura del client email
             window.location.href = mailtoLink;
